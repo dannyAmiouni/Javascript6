@@ -1,0 +1,23 @@
+<div class="card-wrapper {{item.type}}" [class.last]="last">
+    <p appUnderline [deco] = '"underline"'>
+        {{item.title}}
+    </p>
+  <div *ngIf='item.imgUrl'>
+    <img src="{{item.imgUrl}}" alt="{{item.body}}" (click)="clicked()">
+  </div>
+    <div *ngIf='!item.imgUrl'>
+        <img src='https://upload.wikimedia.org/wikipedia/en/a/aa/No_sign.png' alt="Default Image">
+    </div>
+  <div class="body">
+    <strong>Body:</strong> {{item.body}}
+  </div>
+  <div class="author">
+    <strong>Author:</strong> {{item.author}}
+  </div>
+  <div class="type">
+    <strong>Type:</strong> {{item.type}}
+  </div>
+  <p appUnderline [deco] = '"line-through"'>
+      {{item.tags}}
+  </p>
+</div>
