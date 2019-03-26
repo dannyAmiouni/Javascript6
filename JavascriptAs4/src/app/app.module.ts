@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ContentTypePipe } from './content-type.pipe';
 import { UnderlineDirective } from './underline.directive';
 import { MessagesComponent } from './messages/messages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
-      FormsModule
+      FormsModule,
+      BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
