@@ -10,6 +10,9 @@ import { ContentTypePipe } from './content-type.pipe';
 import { UnderlineDirective } from './underline.directive';
 import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,12 +22,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContentCardComponent,
     ContentTypePipe,
     UnderlineDirective,
-    MessagesComponent
+    MessagesComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
       FormsModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      RouterModule.forRoot([
+          { path: 'content/:id', component: ContentDetailComponent },
+          { path: 'content', component: ContentListComponent },
+          { path: '**', component: NotFoundComponent }
+      ])
   ],
   providers: [],
   bootstrap: [AppComponent]

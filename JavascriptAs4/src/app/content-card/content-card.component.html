@@ -20,4 +20,8 @@
   <p appUnderline [deco] = '"line-through"'>
       {{item.tags}}
   </p>
+
+    <a [routerLink]="['/content',item.contentId]"
+       routerLinkActive="active">Content Detail</a><br>
+
 </div>
